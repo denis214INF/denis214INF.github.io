@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis — Начинающий Разработчик</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #0b0f15, #0d1117);
+            color: #e6edf3;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 25px;
+            background: #0f141a;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: fadeDown 1s ease;
+        }
+        @keyframes fadeDown {
+            from {opacity:0; transform: translateY(-20px);} 
+            to {opacity:1; transform: translateY(0);} 
+        }
+        @keyframes fadeUp {
+            from {opacity:0; transform: translateY(40px);} 
+            to {opacity:1; transform: translateY(0);} 
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.45);
+            animation: fadeUp 0.8s ease;
+        }
+        h2 { margin-top: 0; }
+        .btn {
+            display: inline-block;
+            background: #00ff9d;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s;
+            box-shadow: 0 0 15px #00ff9d;
+        }
+        .btn:hover {
+            background: #00ffaa;
+            box-shadow: 0 0 25px #00ffcc;
+        }
+        .skills span {
+            display: inline-block;
+            background: #21262d;
+            padding: 7px 12px;
+            border-radius: 8px;
+            margin: 6px;
+            transition: 0.3s;
+        }
+        .skills span:hover {
+            background: #2b3138;
+            transform: scale(1.05);
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .project-card {
+            background: #1b212a;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0,255,180,0.4);
+        }
+        .socials a {
+            display: inline-block;
+            margin: 8px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #111;
+            color: #00ffe7;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 15px #00ffe7;
+            transition: 0.3s;
+        }
+        .socials a:hover {
+            box-shadow: 0 0 22px #00fff2;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #8b949e;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Denis — Начинающий Разработчик
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Обо мне</h2>
+        <p>Привет! Я <b>Денис</b> — начинающий разработчик, создающий игры, сайты и собственные проекты. Возраст — <i>неизвестен</i>.</p>
+    </div>
+
+    <div class="card">
+        <h2>Мои навыки</h2>
+        <div class="skills">
+            <span>HTML</span><span>Python</span><span>Unity</span><span>Мини-игры</span><span>Web‑Dev</span><span>Игрoвая логика</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Мои проекты</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>🎮 Мини‑игры</h3>
+                <p>Создаю свои игры на Python и Unity.</p>
+            </div>
+            <div class="project-card">
+                <h3>⚙️ Авто‑боты</h3>
+                <p>Пишу простые боты на Python.</p>
+            </div>
+            <div class="project-card">
+                <h3>🌐 Сайты</h3>
+                <p>Верстаю красивые сайты под любые проекты.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Мои соц. сети</h2>
+        <div class="socials">
+            <a href="https://web.telegram.org/a/#7386430834" target="_blank">Мой Telegram</a>
+            <a href="https://t.me/PythonBots214" target="_blank">Мой Telegram‑канал</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Скачать визитку</h2>
+        <a class="btn" onclick="downloadCard()">Скачать файл</a>
+    </div>
+
+</div>
+
+<footer>© Denis | Личный сайт разработчика</footer>
+
+<script>
+function downloadCard() {
+    const text = `Имя: Денис
+Статус: Начинающий разработчик
+Telegram: https://web.telegram.org/a/#7386430834`;
+    const blob = new Blob([text], {type: 'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'denis_card.txt';
+    a.click();
+}
+</script>
+
+</body>
+</html>
+
